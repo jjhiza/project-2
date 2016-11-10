@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.elysium.nodlebar.MainActivity">
+
+    <item
+        android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item
+        android:id="@+id/btnGoToBasket"
+        android:icon="@drawable/shopping_basket"
+        android:title="Go to basket"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/btnEditProfile"
+        android:title="My Noodle Bar"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/btnLogout"
+        android:title="Sign Out"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/btnSettings"
+        android:title="Settings"
+        app:showAsAction="never"/>
+
+</menu>
