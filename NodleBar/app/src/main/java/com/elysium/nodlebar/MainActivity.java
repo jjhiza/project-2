@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void insertFoodDataAsync() { //TODO edit "Ramen" category
+    private void insertFoodDataAsync() { //TODO edit "Ramen" category -> DONE
 
         Food food1 = new Food (
                 1,
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_1,
                 "Chicken soyu Ramen",
                 "Subtle, fresh flavors that goes down easy.",
-                "Ramen",
+                "Chicken",
                 " Noodle Bowl ",
                 13);
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_2,
                 "Chili Ramen w/ ground Chicken",
                 "An intense blast of spice that is sure to fire up your day.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 18);
 
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_3,
                 "Spicy Paitan Ramen w/ Chicken",
                 "Not as hot as the Chili bowl, but still has enough kick to make you notice.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 14);
 
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_5,
                 "Mobile Ramen",
                 "A small bowl of delicious ramen, designed to be eaten wherever you are.",
-                "Ramen",
+                "Small",
                 " Noodle Bowl ",
                 7);
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_6,
                 "Spicy Ramen w/ Diced Egg",
                 "Simple yet flavorful, this bowl of noodles strikes the perfect balance.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 5);
 
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_7,
                 "Spring-time Ramen",
                 "Packed with fresh eggs, bean sprouts, veggies, chicken, and a hint of citrus, this ramen has all the brightness of a crisp Spring day. ",
-                "Ramen",
+                "Chicken & Veggie",
                 " Noodle Bowl ",
                 12);
 
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_8,
                 "Semi-spicy Chicken Soyu Ramen",
                 "A hint of heat, and fresh ingredients make this a perfect ramen for any occasion.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 15);
 
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_9,
                 "Pepper flake Ramen",
                 "Hot, crunchy, AND vegetarian? Yup, this ramen has it all.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 10);
 
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
         final FoodDBHelper foodDBHelper = FoodDBHelper.getInstance(this);
 
-        AsyncTask<Void, Integer, Void> task = new AsyncTask<Void, Integer, Void>() {
+        AsyncTask<Void, Integer, Void> task = new AsyncTask<Void, Integer, Void>() { //Believe this is the only one I need
 
             @Override
             protected void onPreExecute() {
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void insertFoodData() { //TODO - Why is this not being used??????
+    private void insertFoodData() {
 
         Food food1 = new Food (
                 1,
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_1,
                 "Chicken soyu Ramen",
                 "Subtle, fresh flavors that goes down easy.",
-                "Ramen",
+                "Chicken",
                 " Noodle Bowl ",
                 13);
 
@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_2,
                 "Chili Ramen w/ ground Chicken",
                 "An intense blast of spice that is sure to fire up your day.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 18);
 
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_3,
                 "Spicy Paitan Ramen w/ Chicken",
                 "Not as hot as the Chili bowl, but still has enough kick to make you notice.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 14);
 
@@ -332,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_5,
                 "Mobile Ramen",
                 "A small bowl of delicious ramen, designed to be eaten wherever you are.",
-                "Ramen",
+                "Small",
                 " Noodle Bowl ",
                 7);
 
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_6,
                 "Spicy Ramen w/ Diced Egg",
                 "Simple yet flavorful, this bowl of noodles strikes the perfect balance.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 5);
 
@@ -352,7 +352,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_7,
                 "Spring-time Ramen",
                 "Packed with fresh eggs, bean sprouts, veggies, chicken, and a hint of citrus, this ramen has all the brightness of a crisp Spring day. ",
-                "Ramen",
+                "Chicken & Veggie",
                 " Noodle Bowl ",
                 12);
 
@@ -362,7 +362,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_8,
                 "Semi-spicy Chicken Soyu Ramen",
                 "A hint of heat, and fresh ingredients make this a perfect ramen for any occasion.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 15);
 
@@ -382,7 +382,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ramen_10,
                 "Pepper flake Ramen",
                 "Hot, crunchy, AND vegetarian? Yup, this ramen has it all.",
-                "Ramen",
+                "Spicy",
                 " Noodle Bowl ",
                 10);
 

@@ -158,7 +158,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return i;
     }
 
-    public Cursor getAllFood() { // TODO - why isn't this ever being used??????????????
+    public Cursor getAllFood() {
 
         SQLiteDatabase db = getReadableDatabase();
 
@@ -175,7 +175,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor getAllFoodBasicInfo() { // TODO - Why is this never being used???????????????????????
+    public Cursor getAllFoodBasicInfo() {
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.query(
