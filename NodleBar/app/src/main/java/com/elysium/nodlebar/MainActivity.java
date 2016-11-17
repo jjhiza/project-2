@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -110,8 +111,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void insertFoodDataAsync() {  //TODO edit this further
-        Food food1 = new Food(
+    private void insertFoodDataAsync() { //TODO edit "Ramen" category
+
+        Food food1 = new Food (
                 1,
                 500,
                 R.drawable.ramen_1,
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 13);
 
-        Food food2 = new Food(
+        Food food2 = new Food (
                 2,
                 500,
                 R.drawable.ramen_2,
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 18);
 
-        Food food3 = new Food(
+        Food food3 = new Food (
                 3,
                 500,
                 R.drawable.ramen_3,
@@ -141,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 14);
 
-        Food food4 = new Food(
+        Food food4 = new Food (
                 4,
                 500,
                 R.drawable.ramen_4,
@@ -151,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 24);
 
-        Food food5 = new Food(
+        Food food5 = new Food (
                 5,
                 500,
                 R.drawable.ramen_5,
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 7);
 
-        Food food6 = new Food(
+        Food food6 = new Food (
                 6,
                 500,
                 R.drawable.ramen_6,
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 5);
 
-        Food food7 = new Food(
+        Food food7 = new Food (
                 7,
                 500,
                 R.drawable.ramen_7,
@@ -181,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 12);
 
-        Food food8 = new Food(
+        Food food8 = new Food (
                 8,
                 500,
                 R.drawable.ramen_8,
@@ -191,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 15);
 
-        Food food9 = new Food(
+        Food food9 = new Food (
                 9,
                 500,
                 R.drawable.ramen_9,
@@ -201,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 10);
 
-        Food food10 = new Food(
+        Food food10 = new Food (
                 10,
                 500,
                 R.drawable.ramen_10,
@@ -212,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
                 24);
 
         final List<Food> foods = new ArrayList<>(10);
+
         foods.add(food1);
         foods.add(food2);
         foods.add(food3);
@@ -236,7 +239,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                for(int i = 0; i < 10; i++){
+
+                for(int i = 0; i < 10; i++) {
                     foodDBHelper.newFood(foods.get(i));
                     publishProgress(i + 1);
                 }
@@ -272,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.btnGoToBasket) {
-            Intent intent = new Intent(this, BasketActivity.class);
+            Intent intent = new Intent (this, BasketActivity.class);
             startActivity(intent);
             return true;
         }
@@ -280,9 +284,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void insertFoodData() {
+    private void insertFoodData() { //TODO - Why is this not being used??????
 
-        Food food1 = new Food(
+        Food food1 = new Food (
                 1,
                 500,
                 R.drawable.ramen_1,
@@ -292,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 13);
 
-        Food food2 = new Food(
+        Food food2 = new Food (
                 2,
                 500,
                 R.drawable.ramen_2,
@@ -302,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 18);
 
-        Food food3 = new Food(
+        Food food3 = new Food (
                 3,
                 500,
                 R.drawable.ramen_3,
@@ -312,7 +316,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 14);
 
-        Food food4 = new Food(
+        Food food4 = new Food (
                 4,
                 500,
                 R.drawable.ramen_4,
@@ -322,7 +326,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 24);
 
-        Food food5 = new Food(
+        Food food5 = new Food (
                 5,
                 500,
                 R.drawable.ramen_5,
@@ -332,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 7);
 
-        Food food6 = new Food(
+        Food food6 = new Food (
                 6,
                 500,
                 R.drawable.ramen_6,
@@ -342,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 5);
 
-        Food food7 = new Food(
+        Food food7 = new Food (
                 7,
                 500,
                 R.drawable.ramen_7,
@@ -352,7 +356,7 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 12);
 
-        Food food8 = new Food(
+        Food food8 = new Food (
                 8,
                 500,
                 R.drawable.ramen_8,
@@ -362,10 +366,10 @@ public class MainActivity extends AppCompatActivity {
                 " Noodle Bowl ",
                 15);
 
-        Food food9 = new Food(
+        Food food9 = new Food (
                 10,
                 500,
-                R.drawable.ramen_10,
+                R.drawable.ramen_9,
                 "Mastodon Soyu Ramen",
                 "A mammoth mountain of mouth-watering chicken, veggies, and eggs - get a taste of this ramen before it goes extinct. ",
                 "Mega Ramen",
@@ -375,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
         Food food10 = new Food(
                 9,
                 500,
-                R.drawable.ramen_9,
+                R.drawable.ramen_10,
                 "Pepper flake Ramen",
                 "Hot, crunchy, AND vegetarian? Yup, this ramen has it all.",
                 "Ramen",

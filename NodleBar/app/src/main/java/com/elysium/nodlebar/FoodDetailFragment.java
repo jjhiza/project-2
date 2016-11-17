@@ -18,7 +18,8 @@ import java.util.List;
  * Created by jay on 11/10/16.
  */
 
-public class FoodDetailFragment extends Fragment implements View.OnClickListener{
+public class FoodDetailFragment extends Fragment implements View.OnClickListener {
+
     ImageView imgView, btnAddToBasket;
     TextView txtName, txtDescription, txtCategory, txtQuantityInCart, txtStockCount;
     long foodId;
@@ -91,8 +92,9 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
                 Food food = dbHelper.getFoodById(foodId);
 
                 int indexInList = -1;
+
                 for (int i = 0; i < basketList.size(); i++) {
-                    if (foodId == basketList.get(i).getId()){
+                    if (foodId == basketList.get(i).getId()) {
                         indexInList = i;
                         break;
                     }
@@ -100,18 +102,18 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
                 FoodInBasket foodInBasket = null;
 
-                if (indexInList < 0){
+                if (indexInList < 0) {
 
-                    if (food.getCount() > 0){
+                    if (food.getCount() > 0) {
                         foodInBasket = new FoodInBasket(food, 1, Constants.user.getId());
                         UserBasket.getInstance().addToBasket(foodInBasket);
 
-                    }else {
+                    } else {
 
                         Toast.makeText(getActivity(), "Sorry, this item is out of stock",
                                 Toast.LENGTH_SHORT).show();
                     }
-                }else {
+                } else {
 
                     foodInBasket = basketList.get(indexInList);
                     foodInBasket.addToQuantity();
@@ -119,6 +121,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
                 if (foodInBasket != null)
                     txtQuantityInCart.setText(String.valueOf(foodInBasket.getQuantity()));
+
                 else{
                     txtQuantityInCart.setText(String.valueOf(0));
                 }

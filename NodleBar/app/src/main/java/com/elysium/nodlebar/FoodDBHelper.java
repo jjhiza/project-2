@@ -158,7 +158,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return i;
     }
 
-    public Cursor getAllFood() {
+    public Cursor getAllFood() { // TODO - why isn't this ever being used??????????????
 
         SQLiteDatabase db = getReadableDatabase();
 
@@ -175,7 +175,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor getAllFoodBasicInfo(){
+    public Cursor getAllFoodBasicInfo() { // TODO - Why is this never being used???????????????????????
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.query(
@@ -198,7 +198,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
                         COL_DESCRIPTION_FOOD + " LIKE ? OR " +
                         COL_TAGS_FOOD + " LIKE ? ";
 
-        String[] selectionArgs = new String[]{"%" + search + "%",
+        String[] selectionArgs = new String[] {"%" + search + "%",
                 "%" + search + "%", "%" + search + "%"};
 
         Cursor cursor;
@@ -249,7 +249,8 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return food;
     }
 
-    public long insertToBasket(FoodItem item){
+    public long insertToBasket(FoodItem item) {
+
         SQLiteDatabase db = getWritableDatabase();
 
         int i = item.isPurchased() ? 1 : 0;
@@ -270,13 +271,14 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         return itemId;
     }
 
-    public FoodItem getBasketedFoodItemFromUser(long userId, long foodId){
+    public FoodItem getBasketedFoodItemFromUser(long userId, long foodId) {
+
         SQLiteDatabase db = getReadableDatabase();
         String selection = String.format(Locale.ENGLISH, "%s=? AND %s=? AND %s=?",
                 COL_FK_FOOD_ID, COL_FK_USER_ID, COL_PURCHASED_ITEM);
         String[] selectionArgs = {String.valueOf(foodId), String.valueOf(userId), String.valueOf(0)};
 
-        Cursor cursor = db.query(
+        Cursor cursor = db.query (
                 ITEM_TABLE_NAME,
                 null,
                 selection,
@@ -286,7 +288,8 @@ public class FoodDBHelper extends SQLiteOpenHelper {
                 null
         );
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
+
             FoodItem foodItem = new FoodItem(
                     cursor.getInt(cursor.getColumnIndex(COL_PURCHASED_ITEM)) >= 1,
                     cursor.getLong(cursor.getColumnIndex(COL_ID_ITEM)),
@@ -297,7 +300,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
 
             return foodItem;
 
-        }else {
+        } else {
 
             return null;
         }
@@ -341,7 +344,7 @@ public class FoodDBHelper extends SQLiteOpenHelper {
         String where = COL_FK_FOOD_ID + " =? AND " + COL_FK_USER_ID + " =? AND " + COL_PURCHASED_ITEM + " = ?";
         String[] whereArgs = new String[]{String.valueOf(foodId), String.valueOf(userId), "0"};
 
-        Cursor cursor = db.query(
+        Cursor cursor = db.query (
                 ITEM_TABLE_NAME,
                 null,
                 where,
@@ -355,10 +358,11 @@ public class FoodDBHelper extends SQLiteOpenHelper {
     }
 
     public HashMap getFoodCounts() {
+
         HashMap foodCounts = new HashMap();
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor cursor = db.query(
+        Cursor cursor = db.query (
                 FOOD_TABLE_NAME,
                 new String[] {
                         COL_ID_FOOD,
